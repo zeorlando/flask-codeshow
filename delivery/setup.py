@@ -4,7 +4,7 @@ def read(filename):
     return [
         req.strip()
         for req 
-        in open(filename).readline()
+        in open(filename).readlines()
     ]
 
 setup(
@@ -13,7 +13,7 @@ setup(
     description="Delivery app",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=read["requirements.txt"],
+    install_requires=read("requirements.txt"),
     extras_require={
         "dev": read("requirements-dev.txt")
     }
